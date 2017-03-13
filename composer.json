@@ -1,0 +1,50 @@
+{
+    "name": "zendframework/skeleton-application",
+    "description": "Skeleton Application for Zend Framework zend-mvc applications",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
+        "doctrine/doctrine-orm-module": "^1.1",
+        "zendframework/zend-mvc": "^3.0.2",
+        "zfcampus/zf-development-mode": "^3.0",
+        "zendframework/zend-i18n": "^2.7",
+        "zendframework/zend-code": "^3.1",
+        "neilime/zf2-twb-bundle": "^3.1",
+        "zendframework/zend-authentication": "^2.5",
+        "zendframework/zend-session": "^2.7",
+        "zendframework/zend-math": "^3.0",
+        "erusev/parsedown": "^1.6"           
+    },
+    "autoload": {
+        "psr-4": {
+            "Metis\\": "module/Metis/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php",
+        "test": "phpunit"
+    }
+}

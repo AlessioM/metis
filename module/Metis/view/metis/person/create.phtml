@@ -1,0 +1,15 @@
+<?php $title = "register new person"?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$this->headTitle($title);
+
+$form = $this->form;
+$form->prepare();
+
+echo $this->form(null,\TwbBundle\Form\View\Helper\TwbBundleForm::LAYOUT_HORIZONTAL)->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+ ?>
+<a href="<?php echo $this->url('person');?>">
+       <button type="button" class="btn btn-link">cancle</button>
+</a>

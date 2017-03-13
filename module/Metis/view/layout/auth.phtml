@@ -1,0 +1,62 @@
+<?= $this->doctype() ?>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <?= $this->headTitle($this->page_title)->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge,chrome=1')
+        ?>
+
+        <meta name="description" content="metis: simple file sharing">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . 'favicon.ico'])
+                 ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+
+        <?= $this->headLink()
+                 ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                 ->prependStylesheet($this->basePath('css/main.css'))
+                 ->prependStylesheet($this->basePath('css/sticky-footer.css'))
+        ?>
+
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js'))
+        ?>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container">
+      <?= $this->content ?>
+      <hr>
+    </div> <!-- /container -->
+    <footer class="footer">
+      <p>&copy; <?= $this->copyright ?> 2017</p>
+    </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>

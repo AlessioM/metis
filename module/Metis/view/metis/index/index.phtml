@@ -1,0 +1,12 @@
+<?php foreach($elements as $element): ?>
+  <?php  echo $this->partial(sprintf('element_%s.phtml', $element['type']), $element); ?>
+  <?php if($element['downloads']):?>
+     <div class='row top-buffer text-right'><div class='col-md-12'>
+       <?php foreach ($element['downloads'] as $download) {
+         echo $this->partial('download.phtml', $download);
+       }
+       ?>
+     </div>
+   </div>
+  <?php endif; ?>
+<?php endforeach; ?>
